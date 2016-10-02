@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8">
-<title>Mary's Site</title>
+  <!-- boostrap css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
 </head>
 <body>
-	<h1>Hello World!</h1>
+<h1>Monk's Cafe</h1>
+<h3>"The Coffee Shop"</h3>
+<img src="toms-restaurant.jpg" alt="Tom's Coffee Shop">
+
+<div class="reservations">
+<h2>Reservations</h2>
+
+<div class="reservationData">
+<h3>Make A Reservation</h3>
+    <form class="form-inline reservation-form">
+      <div class="form-group">
+        <input type="text" class="form-control reservation-name" placeholder="Name">
+      </div>
+      <br>
+      <div class="form-group">
+      	<input type="text" class="form-control reservation-date" placeholder="Date">
+      <!--<div class="form-group">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+            Select A Day
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu reservation-day">
+            <li><a>Today</a></li>
+            <li><a>Tomorrow</a></li>
+            <li><a>The day after next</a></li>
+          </ul>
+        </div>
+      </div>-->
+      <br>
+      <button class="btn btn-default reservation-button">Set Reservation</button>
+    </form>
+    <ul class="reservations"></ul>
+  </div>
+
+  <script id="reservation-template" type="text/x-handlebars-template">
+    <li data-id="{{reservationId}}">
+      <p>Hi, {{name}}. Your reservation is all set for {{day}}.</p>
+    </li>
+  </script>
+  </div>
+
+  <div class="existingReservations">
+  	<h3>Existing Reservations</h3>
+  	<table>
+<thead>
+<th>Name</th>
+<th>Day</th>
+</thead>
+<tbody>
+	<tr>
+		<td id="existingName"></td>
+		<td id="existingDate"></td>
+	</tr>
+</tbody>
+</table>
+  </div>
+
+  <div class="dining">
+  <h2>Come Dine with Us</h2>
+<div id="map">
+</div>
+    </div>
+
+  <div>
+  	<h2>Customer Reviews</h2>
+  	<div></div>
+  	<div>
+  		<p>"Big lettuce, big carrots, tomatoes like volleyballs."</p>
+<p><i>- Jerry Seinfeld, on The BIG Salad</i></p>
+  	</div>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" />
+  <!-- integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script> -->
+  <!-- bootstrap js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- handlebars -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <!-- custom js -->
+  <script src="js/main.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3n63rqI-EQjvJl5vNGrH8HpiLRIVPHhA&callback=initMap" async defer></script>
+
+
 </body>
 </html>
